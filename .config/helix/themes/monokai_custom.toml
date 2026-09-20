@@ -1,7 +1,7 @@
 inherits = "monokai_pro"
 
 "constant"  = "purple"
-"variable.builtin" = "base8"
+# "variable.builtin" = "base8"
 "constant.builtin" = "purple"
 "constant.character.escape" = "purple"
 "constant.character" = "yellow"
@@ -29,5 +29,6 @@ inherits = "monokai_pro"
 "string.delimiter" = "base6"
 "punctuation.delimiter.rust" = "red"
 
+"variable.builtin" = { fg = "base7", modifiers = ["italic"] }
 "variable.builtin.self" = { fg = "base7", modifiers = ["italic"] }
 "label" = { fg = "yellow" }

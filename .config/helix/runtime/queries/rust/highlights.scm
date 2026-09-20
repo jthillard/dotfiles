@@ -135,7 +135,7 @@
 ; Extraneous
 ; ---
 
-(self) @variable.builtin
+(self) @variable.builtin.self
 
 (field_initializer
   (field_identifier) @variable.other.member)
@@ -523,7 +523,7 @@
   "'" @string.delimiter)
 
 (lifetime
-  (identifier) @type)
+  (identifier) @string)
 
 (self) @variable.builtin.self
 

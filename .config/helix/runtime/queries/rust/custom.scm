@@ -8,7 +8,7 @@
   "'" @string.delimiter)
 
 (lifetime
-  (identifier) @type)
+  (identifier) @string)
 
 (self) @variable.builtin.self
 
