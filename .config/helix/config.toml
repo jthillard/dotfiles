@@ -88,3 +88,7 @@ A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befo
 [keys.normal.g]
 "right" = "goto_line_end"
 "left" = "goto_line_start"
+
+[keys.select.g]
+"right" = "goto_line_end"
+"left" = "goto_line_start"

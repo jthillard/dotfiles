@@ -6,27 +6,27 @@ bright_foreground = "#ffffff"
 dim_foreground = "#dddddd"
 foreground = '#fff1f3'
 
-  # Normal colors
+# Normal colors
 [colors.normal]
-black =  '#2c2525'
-red =    '#fd6883'
-green =  '#adda78'
+black = '#2c2525'
+red = '#fd6883'
+green = '#adda78'
 yellow = '#f9cc6c'
-blue =   '#f38d70'
-magenta ='#a8a9eb'
-cyan =   '#85dacc'
-white =  '#fff1f3'
+blue = '#f38d70'
+magenta = '#a8a9eb'
+cyan = '#85dacc'
+white = '#fff1f3'
 
-  # Bright colors
+# Bright colors
 [colors.bright]
-black =  '#72696a'
-red =    '#fd6883'
-green =  '#adda78'
+black = '#72696a'
+red = '#fd6883'
+green = '#adda78'
 yellow = '#f9cc6c'
-blue =   '#f38d70'
-magenta ='#a8a9eb'
-cyan =   '#85dacc'
-white =  '#fff1f3'
+blue = '#f38d70'
+magenta = '#a8a9eb'
+cyan = '#85dacc'
+white = '#fff1f3'
 # [colors.bright]
 # black = "#666666"
 # blue = "#7aa6da"
@@ -61,6 +61,7 @@ size = 16
 # family = "cozettevector"
 # family = "tamzenForPowerline"
 # family = "misc tamsyn"
+# family = "terminus"
 family = "cozette"
 
 [scrolling]
@@ -68,3 +69,6 @@ history = 1000
 
 [window]
 opacity = 0.75
+
+# [bell]
+# command = { program = "canberra-gtk-play", args = ["--id=bell"] }

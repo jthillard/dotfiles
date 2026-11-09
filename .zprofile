@@ -6,6 +6,8 @@ if pstree -s $$ | grep -q 'login'; then
   eval $(echo "export "$(dbus-launch | tr '\n' ' '))
 
   eval `ssh-agent` > /dev/null
+
+  sleep 0.2
   
   openrc --user default
 fi

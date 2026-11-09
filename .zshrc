@@ -67,6 +67,7 @@ bindkey '\e[1;5A' sudo-previous
 # End of lines configured by zsh-newuser-install
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # alias
 alias sway="~/script/init-sway"
@@ -109,7 +110,9 @@ if [ $HOST = "julien-pc-fixe" ]; then
 	export WLR_NO_HARDWARE_CURSORS=1
 fi
 
+source ~/.zsh/plugins/zsh-helix-mode/zsh-helix-mode.plugin.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zhm-add-update-region-highlight-hook
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.config/.zoxide
@@ -127,6 +130,21 @@ if command -v atuin > /dev/null 2>&1; then
 	eval "$(atuin init zsh)"
 fi
 
+# Don't wait for a key sequence after ESC (instant helix mode switch)
+KEYTIMEOUT=1
+
+# Atuin in zsh-helix-mode keymaps (needs both atuin and zsh-helix-mode loaded)
+if (( $+functions[zhm_wrap_widget] && $+widgets[atuin-up-search] )); then
+	zhm_wrap_widget atuin-up-search zhm_atuin_up_search
+	zhm_wrap_widget atuin-search    zhm_atuin_search
+	for km in hxins hxnor; do
+		bindkey -M $km '^[[A' zhm_atuin_up_search
+		bindkey -M $km '^[OA' zhm_atuin_up_search
+		bindkey -M $km '^R'   zhm_atuin_search
+	done
+	unset km
+fi
+
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk/"
 
 # Vivado
@@ -141,3 +159,7 @@ export PATH="$PATH:$HOME/installation/flutter/bin"
 if [[ $TTY = "/dev/tty1" ]]; then
 	sway
 fi
+
+export ANTLR4_TOOLS_ANTLR_VERSION=4.13.2
+export CLASSPATH="/usr/share/java/antlr-4.13.2-complete.jar:$CLASSPATH"
+export ANTLR4=antlr4
