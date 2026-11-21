@@ -2,9 +2,9 @@
 
 # Wait until waybar is fully available (for tray)
 wait_waybar () {
-    # Ask dbus to check if waybar is available
-    while [[ -z $(dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep "fr.arouillard.waybar" ) ]]
-    do 
+    # Ask dbus to check if a tray host (waybar) is available
+    until dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep -q "org.kde.StatusNotifierHost"
+    do
         sleep 0.5
     done
 }
